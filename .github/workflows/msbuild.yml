@@ -72,15 +72,15 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
-        working-directory: cheat/loader
+        working-directory: loader
         run: bun install
 
       - name: Build Tauri App
-        working-directory: cheat/loader
+        working-directory: loader
         run: bun run tauri build
 
       - name: Upload Tauri Executable
         uses: actions/upload-artifact@v4
         with:
           name: tauri-loader
-          path: cheat/loader/src-tauri/target/release/*.exe
+          path: loader/src-tauri/target/release/*.exe
